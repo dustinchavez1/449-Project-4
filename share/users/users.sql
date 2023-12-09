@@ -1,0 +1,12 @@
+PRAGMA foreign_keys=ON;
+BEGIN TRANSACTION;
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users (
+    id INTEGER PRIMARY KEY,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE INDEX Users_idx_25674218 ON Users(username);
+ 
+COMMIT;

@@ -1,0 +1,12 @@
+fuse:
+  dir: "./var/db/users/tertiary/fuse"
+  allow-other: false
+data:
+  dir: "./var/db/users/tertiary/data"
+http:
+  addr: ":6903"
+lease:
+  type: "static"
+  advertise-url: "http://localhost:6900"
+  candidate: false
+exec: "uvicorn --port $PORT api.services.users.main:app --reload"

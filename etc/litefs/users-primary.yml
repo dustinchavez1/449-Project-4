@@ -1,0 +1,17 @@
+fuse:
+  dir: "./var/db/users/primary/fuse"
+  allow-other: false
+  debug: false
+data:
+  dir: "./var/db/users/primary/data"
+  compress: true
+  retention: "10m"
+  retention-monitor-interval: "1m"
+http:
+  addr: ":6900"
+lease:
+  type: "static"
+  advertise-url: "http://localhost:6900"
+  candidate: true
+  hostname: "localhost"
+exec: "uvicorn --port $PORT api.services.users.main:app --reload"
